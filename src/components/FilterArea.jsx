@@ -12,15 +12,13 @@ const FilterArea = () => {
     
     const query = searchParams.get('aramaTerimi');
 
-    // form gönderilince
+   
     const handleSubmit = (e) => {
-      // sayfa yenilemyi engelle
+    
       e.preventDefault();
   
-      // aratılan terimi arama parametresi olarak ekle
       searchParams.set('aramaTerimi', e.target[0].value);
   
-      // url'i güncelle
       setSearchParams(searchParams);
       
     };
@@ -29,14 +27,14 @@ const FilterArea = () => {
         if (query) {
           api.get(`/products/category/${query}`)
             .then((res) => {
-              updateProducts(res.data); // Update products state in ProductContext
+              updateProducts(res.data); 
             })
             .catch((error) => {
               console.error('Error fetching filtered data:', error);
-              updateProducts([]); // Reset products state in case of error
+              updateProducts([]); 
             });
         } else {
-          updateProducts([]); // Reset products state if query is empty
+          updateProducts([]); 
         }
       }, [query,]);
     
