@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import api from "../utils/api";
 import { ProductContext } from "../context/productContext";
 import { BasketContext } from "../context/basketContext";
-
+import FilterArea from "./FilterArea";
 
 const Header = () => {
 
@@ -57,10 +57,9 @@ const Header = () => {
                 </ul>
               </li>
             </ul>
-            <form className="d-flex mt-3" >
-              <input className="form-control me-2" type="search" placeholder="Search" />
-              <button className="btn btn-warning" type="submit">Search</button>
-            </form>
+
+            <FilterArea/>
+            
           </div>
         </div>
       </div>

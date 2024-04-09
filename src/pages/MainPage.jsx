@@ -4,8 +4,6 @@ import Loader from '../components/Loader.jsx';
 import Cards from '../components/Cards.jsx';
 
 
-
-
 const MainPage = () => {
   //object seperation
   const { products } = useContext(ProductContext);
